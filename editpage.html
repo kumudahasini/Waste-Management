@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile | Waste Management</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0fdf4, #c8e6c9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dropbtn img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0f2f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px ;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00695c;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 5px;
+      border: 1px solid #b2dfdb;
+      border-radius: 8px;
+      background: #f0fdfa;
+      font-size: 16px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #26a69a;
+      background: #e0f7fa;
+    }
+
+    .button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: rgb(52, 129, 52);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+        background:#66bb6a;
+        box-shadow: 0 0 15px rgb(52, 129, 52);
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, Volunteer</h1>
+    <div class="dropdown">
+      <button class="dropbtn">
+        <img src="user.png" alt="Profile"> profile ▾
+      </button>
+      <div class="dropdown-content">
+        <a href="credentials.html" >My Credentials</a>
+        <a href="activity.html">My Activity</a>
+        <a href="editpage.html">Edit Profile</a>
+        <a href="logout.html">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <div class="form-container">
+      <h2>Edit Profile</h2>
+      <form>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" value="kumuda hasini" required />
+
+        <label for="userid">User ID</label>
+        <input type="text" id="userid" name="userid" value="kumuda_27" readonly />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="kumudakalamraju27@gmail.com" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" value="+91 9490226234" required />
+
+        <label for="area">Assigned Area</label>
+        <input type="text" id="area" name="area" value="Zone 4 - Sector 7, East Wing" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" value="EcoSecure123" required />
+
+        <label for="level">Volunteer Level</label>
+        <select id="level" name="level">
+          <option selected>Level 3 - Green Leader</option>
+          <option>Level 2 - Active Volunteer</option>
+          <option>Level 1 - New Member</option>
+        </select>
+
+        <button type="submit" class="button">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
